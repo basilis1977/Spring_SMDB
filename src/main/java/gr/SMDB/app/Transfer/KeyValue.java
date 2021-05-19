@@ -1,4 +1,4 @@
-package Transfer;
+package gr.SMDB.app.Transfer;
 
 import lombok.Value;
 

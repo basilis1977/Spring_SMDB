@@ -1,4 +1,4 @@
-package Base;
+package gr.SMDB.app.Base;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

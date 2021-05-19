@@ -1,12 +1,11 @@
-package Service;
+package gr.SMDB.app.Service;
 
-import Domain.Movie;
-import Transfer.KeyValue;
+import gr.SMDB.app.Domain.*;
+import gr.SMDB.app.Transfer.KeyValue;
 
 import java.util.List;
 
 public interface MovieService extends BaseService<Movie, Long> {
 	Movie findByName(String name);
 
-	List<KeyValue<String, Integer>> findProductSaleFrequency();
 }

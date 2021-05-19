@@ -1,4 +1,4 @@
-package Domain;
+package gr.SMDB.app.Domain;
 
 import lombok.Data;
 

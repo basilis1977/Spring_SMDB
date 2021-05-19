@@ -1,14 +1,10 @@
-package Service;
+package gr.SMDB.app.Service;
 
-import Domain.People;
-import Repository.PeopleRepository;
-import Transfer.KeyValue;
+import gr.SMDB.app.Domain.People;
+import gr.SMDB.app.Repository.PeopleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor

@@ -1,7 +1,7 @@
-package Service;
+package gr.SMDB.app.Service;
 
-import Base.AbstractLogEntity;
-import Domain.BaseEntity;
+import gr.SMDB.app.Base.AbstractLogEntity;
+import gr.SMDB.app.Domain.BaseEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -23,6 +23,7 @@ public abstract class AbstractServiceImpl<T extends BaseEntity> extends Abstract
 	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
 	public List<T> saveAll(List<T> entities) {
 		logger.trace("Creating {}.", entities);
+		getRepository().deleteAll();
 		return getRepository().saveAll(entities);
 	}
 
@@ -54,6 +55,12 @@ public abstract class AbstractServiceImpl<T extends BaseEntity> extends Abstract
 		} else {
 			throw new NoSuchElementException("Could not perform delete operation to a non-existent object.");
 		}
+	}
+
+	@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_COMMITTED, rollbackFor = Exception.class)
+	public void deleteAll() {
+		logger.trace("Deleting all entities.");
+		getRepository().deleteAll();
 	}
 
 	public boolean exists(T entity) {

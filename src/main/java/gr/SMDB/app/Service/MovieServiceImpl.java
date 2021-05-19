@@ -1,18 +1,20 @@
-package Service;
+package gr.SMDB.app.Service;
 
-import Domain.Movie;
-import Repository.MovieRepository;
-import Transfer.KeyValue;
+import gr.SMDB.app.Domain.*;
+import gr.SMDB.app.Repository.MovieRepository;
+import gr.SMDB.app.Transfer.KeyValue;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
 public class MovieServiceImpl extends AbstractServiceImpl<Movie> implements MovieService {
 	private final MovieRepository movieRepository;
+	private final Set<People> PEOPLE = new HashSet<>();
 
 	@Override
 	public JpaRepository<Movie, Long> getRepository() {
@@ -24,8 +26,6 @@ public class MovieServiceImpl extends AbstractServiceImpl<Movie> implements Movi
 		return movieRepository.findByName(name);
 	}
 
-	@Override
-	public List<KeyValue<String, Integer>> findProductSaleFrequency() {
-		return movieRepository.findProductSaleFrequency();
-	}
+
 }
+

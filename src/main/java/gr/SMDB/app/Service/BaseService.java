@@ -1,4 +1,4 @@
-package Service;
+package gr.SMDB.app.Service;
 
 import java.util.List;
 
@@ -12,6 +12,8 @@ public interface BaseService<T, ID> {
 	void delete(T T);
 
 	void deleteById(ID id);
+
+	void deleteAll();
 
 	boolean exists(T T);
 
