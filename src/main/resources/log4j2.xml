@@ -54,7 +54,7 @@
 			<AppenderRef ref="ConsoleAppender"/>
 			<AppenderRef ref="RollingRandomAccessFileAppender"/>
 		</AsyncLogger>
-		<AsyncLogger name="org.springframework.web" level="debug" additivity="false">
+		<AsyncLogger name="org.springframework.web" level="trace" additivity="false">
 			<AppenderRef ref="ConsoleAppender"/>
 			<AppenderRef ref="RollingRandomAccessFileAppender"/>
 		</AsyncLogger>
