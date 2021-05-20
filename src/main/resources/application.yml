@@ -41,7 +41,7 @@ spring:
       # Whether to use Hibernate's newer IdentifierGenerator for AUTO, TABLE and SEQUENCE.
       use-new-id-generator-mappings: true
     # Stops a JPA EntityManager from being bound to the thread for the entire processing of the request
-    open-in-view: false
+    open-in-view: true
     properties:
       hibernate:
         batch_versioned_data: true
@@ -52,5 +52,9 @@ spring:
         order_inserts: true
         order_updates: true
     show-sql: false
+
+
+
+
 
 

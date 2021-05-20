@@ -1,15 +1,12 @@
 package gr.SMDB.app.Domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -38,10 +35,10 @@ public class People extends BaseEntity{
 	@Column(length = 20, nullable = false)
 	private String type;
 
-	@JsonBackReference("PEOPLE1")
+	@JsonIgnore
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@ManyToMany(cascade = CascadeType.MERGE)
+	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(name="ENTRY",joinColumns = {@JoinColumn(name="People_id")},inverseJoinColumns = {@JoinColumn(name="Movie_id")})
 	private Set<Movie> MOVIES = new HashSet<>();
 

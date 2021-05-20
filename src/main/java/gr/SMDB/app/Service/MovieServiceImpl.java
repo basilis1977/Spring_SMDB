@@ -2,7 +2,6 @@ package gr.SMDB.app.Service;
 
 import gr.SMDB.app.Domain.*;
 import gr.SMDB.app.Repository.MovieRepository;
-import gr.SMDB.app.Transfer.KeyValue;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;

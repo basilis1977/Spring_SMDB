@@ -20,9 +20,6 @@ public class NormalRunner extends AbstractLogEntity implements CommandLineRunner
 
 	@Override
 	public void run(String... args) {
-		logger.info("Reporting all orders");
-		movieService.findAll().forEach(Movie ->
-			logger.info("{} with {} items.", Movie.getId(), Movie.getTitle()));
 
 		while(true){}
 	}

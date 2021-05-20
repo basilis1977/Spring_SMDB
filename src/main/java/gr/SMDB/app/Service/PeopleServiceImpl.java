@@ -21,5 +21,4 @@ public class PeopleServiceImpl extends AbstractServiceImpl<People> implements Pe
 		return peopleRepository.findByName(name);
 	}
 
-
 }
